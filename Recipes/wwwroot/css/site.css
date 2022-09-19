@@ -43,8 +43,12 @@ body {
 }
 
 .create-recipe-text {
-    margin: 100px 0 20px 0;
+    margin: 80px 0 20px 0;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .pizza-img:hover {
