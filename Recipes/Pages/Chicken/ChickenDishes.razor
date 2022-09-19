@@ -1,0 +1,82 @@
+﻿@page "/chickendishes"
+
+<div style="padding: 20px 250px;">
+    @*Heading*@
+    <div class="text-center">
+        <h1 style="font-size: 56px;">
+            Chicken Dishes
+            <small class="text-muted p-1">Recipes</small>
+        </h1>
+    </div>
+
+    @*Hook*@
+    <div class="text-center mt-5" style="font-size: 26px; line-height: 32px;">
+        <p>
+            We’re all about chicken for dinner - chicken breasts, thighs, or
+            even a whole bird all have a spot on our kitchen table. If you’re
+            like us, and just can’t bear to make you (or your family’s) old
+            standbys for the umpteenth time, we’ve got you. Get inspired with
+            our list of 9 chicken dinner recipes — you’ll be sure to find a new
+            weeknight favorite.
+        </p>
+
+        <p>
+            Chicken pairs SO well with cheese, avocado, and spices, in everything
+            from flautas to quesadillas. Grab a pack of tortillas (or make your own!),
+            and you’ll have myriad different options for how to serve your chicken.
+        </p>
+
+        <p>
+            Want even more chicken inspiration? Try our stuffed or baked chicken recipes too.
+        </p>
+    </div>
+
+    @*Recipes*@
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-5 mt-5">
+                <div class="w-100 p-4 row create-recipe">
+                    <div class="col-4">
+                        <img src="/images/Chicken/create-recipe.jpg" 
+                        style="width: 100%; height:100%; object-fit:contain;" />
+                    </div>
+
+                    <div class="col-8 align-items-center">
+                        <div class="align-middle create-recipe-text">
+                            <h3 style="text-align: left;">
+                                Create your own Recipe
+                            </h3>
+
+                            <p style="text-align: left;">
+                                Make your own Pizza with our Pizza Creator!
+                            </p>
+
+                            <a class="btn btn-primary" style="float: left;">
+                                Try Now!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @*@foreach (var pizza in Model.fakePizzaDB)
+            {
+            var imagePath = "~/images/Pizzas/" + (pizza.ImageTitle + ".png");
+
+            <div class="col-4 mb-5">
+            <a asp-area="" asp-page="Checkout/Checkout"
+            asp-route-ImageTitle="@pizza.ImageTitle"
+            asp-route-PizzaName="@pizza.PizzaName"
+            asp-route-PizzaPrice="@pizza.FinalPrice">
+            <img class="card-img pizza-img" src="@imagePath" class="w-100" asp-append-version="true" />
+            </a>
+            <br />
+            </div>
+            }*@
+        </div>
+    </div>
+</div>
+
+@code {
+
+}
