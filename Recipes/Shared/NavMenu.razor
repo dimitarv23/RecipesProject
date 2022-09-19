@@ -1,4 +1,4 @@
-﻿<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+﻿<nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="height: 60px;">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Recipes</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,19 +6,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/">
-                        Home
-                        <span class="visually-hidden">(current)</span>
-                    </a>
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="/Counter">Features</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown p-2">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Action</a>
@@ -30,8 +24,10 @@
                 </li>
             </ul>
             <form class="d-flex">
-                <input class="form-control me-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control me-sm-2" type="text" placeholder="Search" style="border-radius: 5px; height: 40px;">
+                <button class="btn btn-secondary pt-2 pb-2" type="submit" style="border-radius: 5px; height: 40px;">
+                    Search
+                </button>
             </form>
         </div>
     </div>
