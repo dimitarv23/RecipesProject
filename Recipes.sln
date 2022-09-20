@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recipes_Models", "Recipes_M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recipes_DataAccess", "Recipes_DataAccess\Recipes_DataAccess.csproj", "{10793A40-C308-465C-A8BF-1BB73F1B94FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipes", "Recipes\Recipes.csproj", "{7B64DA3A-CEBF-4B34-A365-A8338CAC966C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recipes", "Recipes\Recipes.csproj", "{7B64DA3A-CEBF-4B34-A365-A8338CAC966C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
