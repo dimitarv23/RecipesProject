@@ -1,0 +1,26 @@
+﻿<div class="w-80 p-4 row create-recipe">
+    <div class="col-4" style="display: flex; align-items: center;">
+        <img src="@ImageSource" style="width: 100%; object-fit:contain;" />
+    </div>
+
+    <div class="col-8 align-items-center" style="padding-right: 20px;">
+        <div class="align-middle create-recipe-text">
+            <h2 class="text-center">
+                Create your own Recipe
+            </h2>
+
+            <p class="text-center">
+                Make your own recipe and add it to our site!
+            </p>
+
+            <a class="btn btn-primary">
+                Add your recipe
+            </a>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string ImageSource { get; set; }
+}

@@ -58,6 +58,6 @@ body {
     justify-content: center;
 }
 
-.pizza-img:hover {
+.some-img:hover {
     transform: scale(1.05);
 }
