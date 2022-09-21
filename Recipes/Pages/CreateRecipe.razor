@@ -1,0 +1,68 @@
+﻿@page "/addrecipe"
+
+@inject IRecipeRepository _recipeRepository
+@inject NavigationManager _navigationManager
+
+<div class="col-8" style="margin-left: 100px;">
+    <EditForm Model="Recipe" OnValidSubmit="AddRecipe">
+        <DataAnnotationsValidator />
+
+        <div class="form-group">
+            <div class="mt-3">
+                <label>Name</label>
+                <InputText class="form-control" @bind-Value="Recipe.Name" />
+                <ValidationMessage For="() => Recipe.Name"></ValidationMessage>
+            </div>
+
+            <div class="mt-3">
+                <label>Image Path</label>
+                <InputText class="form-control" @bind-Value="Recipe.ImageSource" />
+                <ValidationMessage For="() => Recipe.ImageSource"></ValidationMessage>
+            </div>
+
+            <div class="mt-3">
+                <label>Dish Type</label>
+                <InputText class="form-control" @bind-Value="Recipe.Type" />
+                <ValidationMessage For="() => Recipe.Type"></ValidationMessage>
+            </div>
+
+            <div class="mt-3">
+                <label>Recipe Description</label>
+                <InputText class="form-control" @bind-Value="Recipe.RecipeDescription" />
+                <ValidationMessage For="() => Recipe.RecipeDescription"></ValidationMessage>
+            </div>
+
+            <div class="mt-3">
+                <label>Directions</label>
+                <InputText class="form-control" @bind-Value="Recipe.Directions" />
+                <ValidationMessage For="() => Recipe.Directions"></ValidationMessage>
+            </div>
+
+            <div class="mt-3 mb-5">
+                <label>Ingredients</label>
+                <InputText class="form-control" @bind-Value="Recipe.Ingredients" />
+                <ValidationMessage For="() => Recipe.Ingredients"></ValidationMessage>
+            </div>
+        </div>
+
+        <div class="form-group py-2">
+            <button class="btn btn-primary" type="submit">
+                Add Recipe
+            </button>
+
+            <NavLink href="" class="btn btn-secondary">
+                Back
+            </NavLink>
+        </div>
+    </EditForm>
+</div>
+
+@code {
+    private RecipeDTO Recipe { get; set; } = new RecipeDTO();
+
+    private async Task AddRecipe()
+    {
+        await _recipeRepository.Create(Recipe);
+        _navigationManager.NavigateTo("");
+    }
+}

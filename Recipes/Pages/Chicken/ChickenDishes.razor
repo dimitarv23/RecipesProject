@@ -1,5 +1,6 @@
 ﻿@page "/chickendishes"
 
+@inject IRecipeRepository _recipeRepository
 
 <div style="padding: 20px 250px;">
     @*Heading*@
@@ -38,15 +39,39 @@
             <div class="col-12 mb-5 mt-5">
                 <_CreateRecipe ImageSource="/images/Chicken/create-recipe.jpg" />
 
-                @*@foreach(var obj in ...)
+                @foreach (var obj in Recipes)
                 {
-                    
-                }*@
+                    <div class="col-4 mb-5">
+                        @obj.Name
+                        @obj.Type
+                        @obj.RecipeDescription
+                        <img class="card-img some-img w-100" src="~/images/Chicken/@obj.ImageSource" />
+
+                        @*<a href="/chickendishes/@obj.Name">
+                    </a>*@
+                        <br />
+                    </div>
+                }
             </div>
         </div>
     </div>
 </div>
 
 @code {
+    private IEnumerable<RecipeDTO> Recipes { get; set; } = new List<RecipeDTO>();
 
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            StateHasChanged();
+            await LoadCategories();
+            StateHasChanged();
+        }
+    }
+
+    private async Task LoadCategories()
+    {
+        Recipes = await _recipeRepository.GetAll();
+    }
 }

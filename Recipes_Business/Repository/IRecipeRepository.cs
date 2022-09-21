@@ -10,8 +10,8 @@ namespace Recipes_Business.Repository
 {
     public interface IRecipeRepository
     {
-        public RecipeDTO Create(RecipeDTO obj);
-        public RecipeDTO Get(int id);
-        public IEnumerable<RecipeDTO> GetAll();
+        public Task<RecipeDTO> Create(RecipeDTO obj);
+        public Task<RecipeDTO> Get(int id);
+        public Task<IEnumerable<RecipeDTO>> GetAll();
     }
 }
