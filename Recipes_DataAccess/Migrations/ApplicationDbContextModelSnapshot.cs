@@ -33,6 +33,10 @@ namespace Recipes_DataAccess.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Directions")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ImageSource")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -45,7 +49,7 @@ namespace Recipes_DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ReceptionDescription")
+                    b.Property<string>("RecipeDescription")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

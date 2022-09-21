@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Recipes_DataAccess.Migrations
 {
-    public partial class AddRecipeToDatabase : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,7 +18,8 @@ namespace Recipes_DataAccess.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ImageSource = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     MeatType = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ReceptionDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RecipeDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Directions = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>

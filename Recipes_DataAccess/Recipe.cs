@@ -15,6 +15,7 @@ namespace Recipes_DataAccess
         public string ImageSource { get; set; }
         public string MeatType { get; set; }
         public string RecipeDescription { get; set; }
+        public string Directions { get; set; }
         public DateTime CreatedOn { get; set; }
     }
 }

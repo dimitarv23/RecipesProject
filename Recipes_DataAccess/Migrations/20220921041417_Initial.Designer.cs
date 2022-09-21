@@ -12,8 +12,8 @@ using Recipes_DataAccess.Data;
 namespace Recipes_DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220920044054_AddRecipeToDatabase")]
-    partial class AddRecipeToDatabase
+    [Migration("20220921041417_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -35,6 +35,10 @@ namespace Recipes_DataAccess.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Directions")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ImageSource")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -47,7 +51,7 @@ namespace Recipes_DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ReceptionDescription")
+                    b.Property<string>("RecipeDescription")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
