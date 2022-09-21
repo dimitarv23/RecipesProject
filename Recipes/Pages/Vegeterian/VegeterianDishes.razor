@@ -1,0 +1,51 @@
+﻿@page "/vegeteriandishes"
+
+
+<div style="padding: 20px 250px;">
+    @*Heading*@
+    <div class="text-center">
+        <h1 style="font-size: 56px;">
+            Vegeterian Dishes
+            <small class="text-muted p-1">Recipes</small>
+        </h1>
+    </div>
+
+    @*Hook*@
+    <div class="text-center mt-5" style="font-size: 26px; line-height: 32px;">
+        <p>
+            A recent poll found that nearly 10 percent of adult Americans consider themselves vegetarian—that’s
+            nearly 33 million people trying to figure out what the heck to eat for dinner.
+            It’s true, we do have a TON of lists dedicated to weeknight dinners filled with steak,
+            chicken, and seafood, but don’t worry: Vegetarians, we’ve got you, too.
+        </p>
+
+        <p>
+            Whether you’re a lifelong vegetarian, a curious omnivore, or are just looking for healthy recipe ideas 
+            for meatless Mondays, you're guaranteed to love these incredible vegetarian dishes.
+        </p>
+
+        <p>
+            
+        </p>
+    </div>
+
+    @*Recipes*@
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-5 mt-5">
+                <_CreateRecipe ImageSource="/images/vegeterian-dishes-images/createDish.jpg" />
+
+                @*@foreach(var obj in ...)
+                {
+
+                }*@
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+}
+
+

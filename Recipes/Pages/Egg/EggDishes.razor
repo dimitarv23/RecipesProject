@@ -1,0 +1,51 @@
+﻿@page "/eggdishes"
+
+
+<div style="padding: 20px 250px;">
+    @*Heading*@
+    <div class="text-center">
+        <h1 style="font-size: 56px;">
+            Egg Dishes
+            <small class="text-muted p-1">Recipes</small>
+        </h1>
+    </div>
+
+    @*Hook*@
+    <div class="text-center mt-5" style="font-size: 26px; line-height: 32px;">
+        <p>
+            Eggs are a STAPLE in our fridge. While they may be known as a breakfast star, 
+            these easy egg recipes can be made any time of day. From skillets to burgers to pizza (yes, we said pizza), 
+            a good egg always hits the spot.
+        </p>
+
+        <p>
+            Why do we love these little guys so much, you may ask?
+            Eggs are a great source of protein, giving an added nutritious boost to your healthy breakfast
+            or weeknight dinner. Plus, they're oh so quick to whip up when you don't have the time (or energy!)
+            to cook up a heftier protein.
+        </p>
+
+        <p>
+            So what are you waiting for? Grab some eggs and get cracking on these tasty recipes!
+        </p>
+    </div>
+
+    @*Recipes*@
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-5 mt-5">
+                <_CreateRecipe ImageSource="/images/egg-dishes-images/createDish.jpg" />
+
+                @*@foreach(var obj in ...)
+                {
+
+                }*@
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+}
+

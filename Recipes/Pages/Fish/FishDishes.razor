@@ -1,0 +1,52 @@
+﻿@page "/fishdishes"
+
+
+<div style="padding: 20px 250px;">
+    @*Heading*@
+    <div class="text-center">
+        <h1 style="font-size: 56px;">
+            Fish Dishes
+            <small class="text-muted p-1">Recipes</small>
+        </h1>
+    </div>
+
+    @*Hook*@
+    <div class="text-center mt-5" style="font-size: 26px; line-height: 32px;">
+        <p>
+            Cooking healthy seafood at home might seem intimidating if you’ve never attempted it before,
+            but you don’t have to let restaurants have all the fun!
+            We’re here to tell you it’s actually quite easy to cook everything from salmon to shrimp,
+            scallops to lobster, and everything in between, all at home.
+        </p>
+
+        <p>
+            If you’re unsure of swapping seafood in for your regular chicken and red meat dishes, consider this:
+            Seafood contains a ton of nutrients like omega-3s, iron, protein, and vitamins B and D
+            (more than any other meat, according to the FDA!). And the best part?
+            Most fish take less than 15 minutes to cook, meaning you can have dinner on the table FAST.
+        </p>
+
+        <p>
+            If you’re new to cooking seafood, try one of our easy whole fish recipes, like baked cod, garlicky lemon baked tilapia, or garlic parmesan flounder.
+        </p>
+    </div>
+
+    @*Recipes*@
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-5 mt-5">
+                <_CreateRecipe ImageSource="/images/fish-dishes-images/createDish.jpeg" />
+
+                @*@foreach(var obj in ...)
+                {
+
+                }*@
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+}
+

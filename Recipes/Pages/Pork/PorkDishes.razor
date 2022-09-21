@@ -1,4 +1,5 @@
 ﻿@page "/porkdishes"
+@using Recipes_Models
 
 <div style="padding: 20px 250px;">
     @*Heading*@
@@ -33,15 +34,16 @@
             <div class="col-12 mb-5 mt-5">
                 <_CreateRecipe ImageSource="/images/pork-dishes-images/create-dish.jpg" />
 
-                @*@foreach (var obj in ...)
+                @foreach (var porkRecipe in Recipes)
                 {
-
-                }*@
+                    <img src="~/images/pork-dishes-images/@porkRecipe.ImageSource" />
+                    <a>@porkRecipe.Name</a>
+                }
             </div>
         </div>
     </div>
 </div>
 
 @code {
-
+    private IEnumerable<RecipeDTO> Recipes { get; set; } = new List<RecipeDTO>();
 }
