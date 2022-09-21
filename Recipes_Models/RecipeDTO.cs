@@ -14,5 +14,6 @@ namespace Recipes_Models
         public string MeatType { get; set; }
         public string RecipeDescription { get; set; }
         public string Directions { get; set; }
+        public string Ingredients { get; set; }
     }
 }

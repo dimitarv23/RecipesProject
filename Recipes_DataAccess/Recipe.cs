@@ -13,9 +13,10 @@ namespace Recipes_DataAccess
         public int ID { get; set; }
         public string Name { get; set; }
         public string ImageSource { get; set; }
-        public string MeatType { get; set; }
+        public string Type { get; set; }
         public string RecipeDescription { get; set; }
         public string Directions { get; set; }
+        public string Ingredients { get; set; }
         public DateTime CreatedOn { get; set; }
     }
 }
