@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Recipes_DataAccess;
 using Recipes_DataAccess.Data;
 using Recipes_Models;
@@ -22,20 +23,20 @@ namespace Recipes_Business.Repository
             _mapper = mapper;
         }
 
-        public RecipeDTO Create(RecipeDTO obj)
+        public async Task<RecipeDTO> Create(RecipeDTO obj)
         {
             var recipe = _mapper.Map<RecipeDTO, Recipe>(obj);
             recipe.CreatedOn = DateTime.Now;
 
             _db.Recipes.Add(recipe);
-            _db.SaveChanges();
+            await _db.SaveChangesAsync();
 
             return _mapper.Map<Recipe, RecipeDTO>(recipe);
         }
 
-        public RecipeDTO Get(int id)
+        public async Task<RecipeDTO> Get(int id)
         {
-            var obj = _db.Recipes.FirstOrDefault(u => u.ID == id);
+            var obj = await _db.Recipes.FirstOrDefaultAsync(u => u.ID == id);
 
             if (obj != null)
             {
@@ -45,7 +46,7 @@ namespace Recipes_Business.Repository
             return new RecipeDTO();
         }
 
-        public IEnumerable<RecipeDTO> GetAll()
+        public async Task<IEnumerable<RecipeDTO>> GetAll()
         {
             return _mapper.Map<IEnumerable<Recipe>, IEnumerable<RecipeDTO>>(_db.Recipes);
         }
