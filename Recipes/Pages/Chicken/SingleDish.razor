@@ -1,8 +1,39 @@
-﻿@page "/chickendishes/{Parameter1}"
+﻿@page "/dishes/{DishType}/{DishID:int}"
 
-<h3>Single Dish</h3>
+@inject IRecipeRepository _recipeRepository
+
+<div class="text-center">
+    <h1 style="font-size: 52px;">
+        @currDish.Name
+    </h1>
+
+    <h2>
+        <small class="text-muted p-1" style="font-size: 38px;">@currDish.Type Meal</small>
+    </h2>
+</div>
+
+<h5>@currDish.RecipeDescription</h5>
 
 @code {
     [Parameter]
-    public string Parameter1 { get; set; }
+    public string DishType { get; set; }
+    [Parameter]
+    public int DishID { get; set; }
+
+    public RecipeDTO currDish { get; set; } = new RecipeDTO();
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            StateHasChanged();
+            await LoadCategories();
+            StateHasChanged();
+        }
+    }
+
+    private async Task LoadCategories()
+    {
+        currDish = await _recipeRepository.Get(this.DishID);
+    }
 }

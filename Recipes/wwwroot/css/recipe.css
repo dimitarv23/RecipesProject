@@ -45,7 +45,7 @@ body {
 }
 
 .create-recipe {
-    background: grey;
+    background: rgb(155, 155, 155);
     margin: 0;
 }
 
@@ -69,12 +69,15 @@ body {
 a:link {
     text-decoration: none;
 }
+
 a:visited {
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: none;
 }
+
 a:active {
     text-decoration: none;
 }
