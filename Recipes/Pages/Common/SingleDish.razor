@@ -11,6 +11,17 @@
         <small class="text-muted p-1" style="font-size: 38px;">@currDish.Type Meal</small>
     </h2>
     <br />
+    @{
+         
+    }
+    @foreach (var ingredient in ingredients)
+    {
+        <a>@ingredient</a>
+    }
+
+    @*<h1>
+        @currDish.Ingredients;
+    </h1>*@
 </div>
 
 <h5>@currDish.RecipeDescription</h5>
@@ -22,6 +33,7 @@
     public int DishID { get; set; }
 
     public RecipeDTO currDish { get; set; } = new RecipeDTO();
+    public List<string> ingredients { get; set; } = new List<string>();
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -36,5 +48,6 @@
     private async Task LoadCategories()
     {
         currDish = await _recipeRepository.Get(this.DishID);
+        ingredients = currDish.Ingredients.Split(';').ToList();
     }
 }
