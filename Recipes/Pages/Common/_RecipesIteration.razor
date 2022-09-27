@@ -3,12 +3,12 @@
 <div class="container">
     <div class="row">
         <div class="col-12 mb-5 mt-5">
-            <_CreateRecipe ImageSource="/images/chicken-dishes-images/create-recipe.jpg" />
+            <_CreateRecipe ImageSource="/images/create-recipe.jpeg" />
 
-            <div class="col-12" style="margin-top: 40px; display: flex;">
+            <div class="col-12" style="margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr 1fr; row-gap: 20px;">
                 @foreach (var obj in Recipes.Where(x => x.Type.ToLower() == PageType))
                 {
-                    <div class="mb-5 col-sm" style="margin-left: 5px; margin-right: 5px; border: 5px inset lightblue;">
+                    <div class="col-sm" style="margin-left: 5px; margin-right: 5px; border: 5px inset lightblue;">
                         <a href="/dishes/@obj.Type/@obj.ID" style="width: 150px;">
                             <div class="item"
                              style="display: flex; background: rgb(136, 174, 203); align-items: center;">
